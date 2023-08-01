@@ -1,3 +1,4 @@
 dist
 node_modules
 .properties.ts
+.DS_Store
