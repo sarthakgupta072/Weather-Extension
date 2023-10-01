@@ -23,6 +23,11 @@ const App: React.FC<{}> = () => {
     setCityInput("")
   }
 
+  const handleCityDeleteButtonClick = (index: number) => {
+    cities.splice(index, 1)
+    setCities([...cities])
+  }
+
   return (
     <Box mx='8px' my='16px'>
       <Grid container>
@@ -43,7 +48,11 @@ const App: React.FC<{}> = () => {
       </Grid>
 
       {cities.map((city, index) => (
-        <WeatherCard key={index} city={city} />
+        <WeatherCard
+          key={index}
+          city={city}
+          onDelete={() => handleCityDeleteButtonClick(index)}
+        />
       ))}
       <Box height='10px' />
     </Box>
